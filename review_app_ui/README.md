@@ -89,7 +89,11 @@ API and JWT auth.
   logged-in role can see, an Admin-only bulk-create-for-a-cycle action, and
   a detail page that swaps in the right form for the review's current
   status -- Self-Assessment, Manager Review, or HR Final -- with a
-  read-only view once Closed.
+  read-only view once Closed. Which form shows is driven entirely by the
+  review's `status`, never by the viewer's role, so a Manager opening their
+  own review (now included in their own list -- see the backend README)
+  gets the same Self-Assessment form an Employee would, with no UI change
+  needed here.
 - **Annual review**: list, an Admin-only "generate for a financial year"
   action, and the same Manager roll-up -> HR final pattern.
 - **Department & Project shown on both review lists and detail pages**: the
